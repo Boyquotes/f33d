@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://v2xgs7ewam2a"]
+[gd_scene load_steps=2 format=3 uid="uid://v2xgs7ewam2a"]
+
+[ext_resource type="Script" path="res://player/guns/gun_default.gd" id="1_7r1gs"]
 
 [node name="Gun_default" type="Node2D"]
+script = ExtResource("1_7r1gs")

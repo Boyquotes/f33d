@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx20p0q6e7fuc"]
+
+[ext_resource type="Script" path="res://player/guns/projectile.gd" id="1_1donn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6xn4o"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gblwx"]
+
+[node name="Projectile" type="RigidBody2D"]
+mass = 0.01
+gravity_scale = 0.0
+script = ExtResource("1_1donn")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_6xn4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gblwx")
