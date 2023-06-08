@@ -23,7 +23,7 @@ func _input(event: InputEvent) -> void:
 
 func _move() -> void:
 	move_dir = Input.get_vector("a", "d", "w", "s")
-	apply_central_force(move_dir*1000)
+	apply_central_force(move_dir*state.speed)
 	target = get_global_mouse_position()
 	view_dir = (target - self.position)
 	view_dir = view_dir.normalized()

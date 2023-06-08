@@ -4,7 +4,7 @@ class_name Projectile
 var shoot = true
 
 const DAMAGE = 10
-const SPEED = 200
+const SPEED = 60
 
 func _ready():
 	set_as_top_level(true)
