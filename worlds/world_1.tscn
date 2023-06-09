@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bla1e6h76bmog"]
+[gd_scene load_steps=8 format=3 uid="uid://bla1e6h76bmog"]
 
 [ext_resource type="PackedScene" uid="uid://bb1krofv4k15t" path="res://worlds/world_default.tscn" id="1_xr70k"]
 [ext_resource type="Script" path="res://worlds/world_1.gd" id="2_i63nl"]
 [ext_resource type="Texture2D" uid="uid://chsk1ehww3r0q" path="res://worlds/envir_atlas.png" id="3_tjrsi"]
-[ext_resource type="Script" path="res://worlds/tilemap.gd" id="4_0utlg"]
+[ext_resource type="Script" path="res://worlds/tilemap_generator.gd" id="4_0utlg"]
+[ext_resource type="Script" path="res://worlds/debug.gd" id="5_gjpyn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnmc6"]
 texture = ExtResource("3_tjrsi")
@@ -13,7 +14,7 @@ texture = ExtResource("3_tjrsi")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
@@ -221,3 +222,11 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 script = ExtResource("4_0utlg")
+
+[node name="Label" type="Label" parent="Player" index="5"]
+offset_left = -25.0
+offset_top = -57.0
+offset_right = 28.0
+offset_bottom = -31.0
+text = "123"
+script = ExtResource("5_gjpyn")

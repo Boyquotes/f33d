@@ -1,9 +1,5 @@
-extends Node2D
-class_name Gun
+extends Label
 
-var damage = 10
-var reload_time = 1
-var is_reloaded = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,10 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	set_text(str(Engine.get_frames_per_second()))
 
-func shot(player):
-	pass
-
-func _on_reloading_timeout():
-	is_reloaded = true

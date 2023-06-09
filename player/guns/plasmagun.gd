@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func shot(raycast, player):
+func shot(player):
 	if is_reloaded:
 		is_reloaded = false
 		var b = projectile.instantiate()
