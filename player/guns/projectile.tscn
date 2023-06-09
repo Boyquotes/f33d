@@ -1,21 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx20p0q6e7fuc"]
+[gd_scene load_steps=5 format=3 uid="uid://bx20p0q6e7fuc"]
 
 [ext_resource type="Script" path="res://player/guns/projectile.gd" id="1_1donn"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_6xn4o"]
-radius = 2.0
-height = 4.0
+[sub_resource type="PrismMesh" id="PrismMesh_g80hb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gblwx"]
 radius = 2.0
 
-[node name="Projectile" type="RigidBody2D"]
-mass = 0.01
-gravity_scale = 0.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_okuwh"]
+radius = 3.16228
+
+[node name="Projectile" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_1donn")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-mesh = SubResource("SphereMesh_6xn4o")
+rotation = 1.5708
+scale = Vector2(2.5, -4.5)
+mesh = SubResource("PrismMesh_g80hb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gblwx")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_okuwh")
+
+[node name="Lifetimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Lifetimer" to="." method="_on_lifetimer_timeout"]

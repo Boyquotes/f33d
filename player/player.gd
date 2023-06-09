@@ -16,10 +16,11 @@ func _ready():
 
 func _physics_process(delta):
 	_move()
-
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("click") or Input.is_action_just_pressed("space"):
+	if Input.is_action_pressed("click") or Input.is_action_pressed("space"):
 		_fire()
+
+#func _input(event: InputEvent) -> void:
+
 
 func _move() -> void:
 	move_dir = Input.get_vector("a", "d", "w", "s")

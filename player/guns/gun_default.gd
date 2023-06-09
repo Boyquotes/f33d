@@ -16,3 +16,9 @@ func _process(delta):
 
 func shot(raycast, player):
 	pass
+
+
+
+
+func _on_reloading_timeout():
+	is_reloaded = true

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1pva8ye74ajq"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_6orb3"]
+[ext_resource type="Script" path="res://enemy/enemy_state.gd" id="2_cbrpu"]
+[ext_resource type="Texture2D" uid="uid://cjitpw87vg15r" path="res://icon.svg" id="2_xqcmn"]
+
+[sub_resource type="Resource" id="Resource_vaouu"]
+script = ExtResource("2_cbrpu")
+hp = 150
+armor = 100
+speed = 300
+max_hp = 150
+max_armor = 100
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h7lo6"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_6orb3")
+state = SubResource("Resource_vaouu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h7lo6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.249998, 0.75)
+scale = Vector2(0.152344, 0.160156)
+texture = ExtResource("2_xqcmn")
